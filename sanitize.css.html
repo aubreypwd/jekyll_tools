@@ -1,0 +1,21 @@
+{% comment %}
+
+Add sanitize.css to your project using a git subtree:
+
+    git subtree add --prefix=assets/css/sanitize.css https://github.com/csstools/sanitize.css.git main --squash
+
+Update with:
+
+    git subtree pull --prefix=assets/css/sanitize.css https://github.com/csstools/sanitize.css.git main --squash
+
+{% endcomment %}
+
+{% assign path = include.path | default: 'assets/css/sanitize.css/' %}
+
+<link href="{{ 'sanitize.css' | prepend: path | absolute_url }}" rel="stylesheet">
+{% if include.all or include.forms %}<link href="{{ 'forms.css' | prepend: path | absolute_url }}" rel="stylesheet">{% endif %}
+{% if include.all or include.assets %}<link href="{{ 'assets.css' | prepend: path | absolute_url }}" rel="stylesheet">{% endif %}
+{% if include.all or include.typography %}<link href="{{ 'typography.css' | prepend: path | absolute_url }}" rel="stylesheet">{% endif %}
+{% if include.all or include.reduce_motion %}<link href="{{ 'reduce-motion.css' | prepend: path | absolute_url }}" rel="stylesheet">{% endif %}
+{% if include.all or include.system_ui %}<link href="{{ 'system-ui.css' | prepend: path | absolute_url }}" rel="stylesheet">{% endif %}
+{% if include.all or include.ui_monospace %}<link href="{{ 'ui-monospace.css' | prepend: path | absolute_url }}" rel="stylesheet">{% endif %}
