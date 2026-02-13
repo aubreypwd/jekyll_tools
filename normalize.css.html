@@ -1,0 +1,15 @@
+{% comment %}
+
+Add normalize.css to your project using a git subtree:
+
+    git subtree add --prefix=assets/css/normalize.css https://github.com/necolas/normalize.css main --squash
+
+Update with:
+
+    git subtree pull --prefix=assets/css/normalize.css https://github.com/necolas/normalize.css main --squash
+
+{% endcomment %}
+
+{% assign path = include.path | default: 'assets/css/normalize.css/' %}
+
+<link rel="stylesheet" href="{{ 'normalize.css' | prepend: path | absolute_url }}">
